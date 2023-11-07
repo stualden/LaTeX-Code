@@ -1,0 +1,160 @@
+\documentclass[addpoints, 12pt]{exam}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+%\usepackage[latin1]{inputenc}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{calc,arrows,through}
+%\usetikzlibrary{intersections}
+\usepackage{multicol}
+
+\pagestyle{empty}
+
+\newcommand{\perpbox}[3]{
+	\draw ($(#1)!.3cm!(#2)$)--($($(#1)!.3cm!(#2)$)!.3cm!90:(#2)$)--($(#1)!.3cm!(#3)$);
+}
+
+\tikzstyle{line} = [draw, -triangle 45]
+
+
+\newcommand{\linedraw}[2]{
+	\draw [line] (#2)--($(#2)!.5cm!180:(#1)$);
+	\draw [line] (#2)--($(#1)!.5cm!180:(#2)$);
+}
+\newcommand{\raydraw}[2]{
+	\draw [line] (#1)--($(#2)!.5cm!180:(#1)$);
+}
+
+\newcommand{\fillpoints}[1]{
+	\foreach \point in {#1} \fill (\point) circle (1.5pt);
+}
+
+
+\newcommand{\tick}[4]{
+	\draw ($ ($(#1)!.5!(#2)$) ! .1cm ! 90:(#2) $) -- ($ ($(#1)!.5!(#2)$) ! .1cm ! -90:(#2) $);
+	\draw ($ ($(#3)!.5!(#4)$) ! .1cm ! 90:(#4) $) -- ($ ($(#3)!.5!(#4)$) ! .1cm ! -90:(#4) $);
+}
+
+\newcommand{\ttick}[4]{
+		\draw ($ ($ ($(#1)!.5!(#2)$)! .03cm ! (#2) $ ) ! .1cm ! 90:(#2) $) 
+			-- ($ ($ ($(#1)!.5!(#2)$)! .03cm ! (#2) $ ) ! .1cm ! -90:(#2) $);
+		\draw ($ ($ ($(#1)!.5!(#2)$)! .03cm ! (#1) $ ) ! .1cm ! 90:(#2) $) 
+			-- ($ ($ ($(#1)!.5!(#2)$)! .03cm ! (#1) $ ) ! .1cm ! -90:(#2) $);
+		\draw ($ ($ ($(#3)!.5!(#4)$)! .03cm ! (#4) $ ) ! .1cm ! 90:(#4) $) 
+			-- ($ ($ ($(#3)!.5!(#4)$)! .03cm ! (#4) $ ) ! .1cm ! -90:(#4) $);
+		\draw ($ ($ ($(#3)!.5!(#4)$)! .03cm ! (#3) $ ) ! .1cm ! 90:(#4) $) 
+			-- ($ ($ ($(#3)!.5!(#4)$)! .03cm ! (#3) $ ) ! .1cm ! -90:(#4) $);
+}
+
+\newcommand{\parrow}[4]{
+	\draw [->,-angle 90,thick] ($(#1)!.49!(#2)$) -- ($(#1)!.5!(#2)$);
+	\draw [->,-angle 90,thick] ($(#3)!.49!(#4)$) -- ($(#3)!.5!(#4)$);
+}
+
+\newcommand{\pparrow}[4]{
+	\draw [->,-angle 90,thick] ($(#1)!.47!(#2)$) -- ($(#1)!.48!(#2)$);
+	\draw [->,-angle 90,thick] ($(#3)!.47!(#4)$) -- ($(#3)!.48!(#4)$);
+	\draw [->,-angle 90,thick] ($(#1)!.52!(#2)$) -- ($(#1)!.53!(#2)$);
+	\draw [->,-angle 90,thick] ($(#3)!.52!(#4)$) -- ($(#3)!.53!(#4)$);
+}
+\newcommand{\mmangle}[4][0]{
+	\draw 	let 	\p1 = ($(#3)-(#2)$),
+				\p2 = ($(#4)-(#2)$),
+				\n3 = {atan2(\y1,\x1)},
+				\n4 = {#1+atan2(\y2,\x2)}
+			in	($(#2)!.25cm!(#3)$) arc (\n3:\n4:.25cm); 
+	\draw 	let 	\p1 = ($(#3)-(#2)$),
+				\p2 = ($(#4)-(#2)$),
+				\n3 = {atan2(\y1,\x1)},
+				\n4 = {#1+atan2(\y2,\x2)}
+			in	($(#2)!.3cm!(#3)$) arc (\n3:\n4:.3cm); 
+}
+
+\begin{document}
+
+\begin{tabbing}
+\noindent Name: \rule[-0.1cm]{5cm}{0.01cm} \hspace{2.5in} \= October 5, 2023 \\
+Precalculus* HW Quiz 02: HW 05-07 \> \numpoints \ Possible Points
+\end{tabbing}
+
+\textbf{Read all questions carefully and answer each part showing all of your supporting work.  Full credit for a given question requires a correct answer and the supporting backup work.  You may use any hand held calculator to support/check your work.  Answers must be simplified and left as exact or rounded to two (2) decimal places.}
+
+\begin{questions}
+
+\question [4] \{Question 1-114\} Given $f(x)=x^2 +1$, $g(x)=2x-8$, and $h(x)=\dfrac{1}{2}x+1$. Write an equation for each of the following operations. \\
+
+\begin{parts}
+\begin{minipage}{3in}
+
+\part $f(x) + g(x)$\\
+
+\end{minipage} \hfill \begin{minipage}{3in}
+\part $g(x)h(x)$\\
+
+\end{minipage}\hfill
+
+\vspace{6cm}
+
+\begin{minipage}{3in}
+
+\part $g(h(x))$\\
+
+\end{minipage} \hfill \begin{minipage}{3in}
+\part $f(f(x))$\\
+
+\end{minipage}
+\end{parts}
+
+\vfill
+\newpage
+
+\question [3] \{Question 1-133\} Renae’s hamster has run away in his hamster ball, which has a radius of 3.5 inches. The hamster ball app on Renae’s phone says that the ball has made 27 revolutions since the hamster went missing. How far away is her hamster? \\
+
+\vspace{5.5cm}
+
+
+
+\question [3] \{Question 2-12\} Calculate the value of $x$ in each diagram below. (Diagrams not to scale.) \\
+
+\begin{center}
+\begin{tikzpicture} [scale=0.8]
+
+	\draw 	(-2,3) --
+			(-2,0) node [right, pos = 0.3] {} node [left, pos = 0.5] {$10$} --
+			(1,0) node [above, pos = 0.7] {\small $77^\circ$}node [below, pos = 0.5] {}--
+			(-2,3) node [above right, pos = 0.5] {$x$} ;
+			
+	\perpbox{-2,0}{1,0}{-2,3};		
+	\coordinate[label=above:{$a.$}]			(H)	at	(-2.8,2.6);
+	
+	\draw 	(8,3) --
+			(5,0) node [right, pos = 0.3] {} node [left, pos = 0.5] {} --
+			(8,0) node [above, pos = 0.35] {\small $21^\circ$}node [below, pos = 0.5] {$x$}--
+			(8,3) node [right, pos = 0.5] {$5$} ;
+			
+	\perpbox{8,0}{8,3}{5,0};	
+	\coordinate[label=above:{$b.$}]			(G)	at	(4.7,2.6);	
+
+\begin{scope} [xshift=2cm]
+			
+	\draw 	(10.4,2.42) --
+			(12.82,0) node [above right, pos = 0.4] {} node [below left, pos = 0.5] {$4$} --
+			(14.23,1.41) node [below right, pos = 0.5] {}--
+			(10.4,2.42) node [above right, pos = 0.5] {$14$} ;
+			
+	\perpbox{12.82,0}{14.23,1.41}{10.4,2.42};
+	\coordinate[label=above:{$c.$}]			(I)	at	(9.7,2.4);
+	\coordinate[label=above:{$x^\circ$}]			(J)	at	(11.4,1.5);
+	
+\end{scope}	
+
+\end{tikzpicture}
+\end{center}
+	
+
+
+\vspace{2cm}
+
+\end{questions}
+
+\end{document}
