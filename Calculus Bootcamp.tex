@@ -1,0 +1,80 @@
+% Standard quiz or short test template
+% Stu Alden
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[addpoints]{exam}  % Numbered problems, can assign points to each
+
+
+\usepackage[14pt]{extsizes}  %ignore warning, it seems to work fine to get 14 pt font
+
+\usepackage{amsmath}  % Gets you most math symbols
+
+\usepackage{changepage}  % What I use, for now, to alter margins
+
+\usepackage{multicol}
+
+%\usepackage[margin=1cm]{geometry} % gave me some problems
+
+\usepackage{tikz}   % For drawing timelines, etc.
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{calc,arrows,through}
+\usetikzlibrary{intersections}
+
+\usepackage[latin1]{inputenc}
+\pagestyle{empty}
+\tikzstyle{line} = [draw, -triangle 45]
+
+\pagestyle{head}
+\lhead{Calculus Bootcamp Diagnostic Quiz\\Calculator not needed}
+\rhead{Name: \rule[-0.1cm]{5cm}{0.01cm}}
+
+
+\begin{document}
+
+\noindent\textbf{Determine the derivative($f'$) of the function ($f$).}
+\vspace{.2in}
+
+\begin{questions}
+
+    \question $f(x)=5x^3-4x$
+    \vspace{1.5in}
+
+    \question $f(z)=az^2+bz+c$
+    \vspace{1.5in}
+
+    \question $f(y)=y^{2n}-y^n$
+    \vspace{1.5in}
+
+    \question $f(t) = 3e^{3t}$
+    \vspace{1.25in}
+
+    \pagebreak
+
+    \begin{adjustwidth}{-23pt}{0pt}
+        \textbf{For the next 2 problems, $f(x)=3-x-x^2$, which when graphed is an upward-pointing (concave-down) parabola.}
+    \end{adjustwidth}
+    \vspace{.2in}
+
+    \question At what value of $x$ does the tangent line to the function $f$ have a slope of -1?
+    \vspace{1.2in}
+
+    \question At what value of $x$ does $f$ reach its \underline{maximum} value?  (Use calculus to answer this)
+    \vspace{1.2in}
+
+    \begin{adjustwidth}{-23pt}{0pt}
+        \textbf{For the next 2 problems, $f(t)=e^{t/4}$ where $t \geq 0$.}
+    \end{adjustwidth}
+    \vspace{.2in}
+
+    \question At what rate is $f$ increasing (i.e., what is its slope) at $t=0$?
+    \vspace{1.2in}
+
+    \question At what value of $t$ is $f$ doubling (i.e., the slope of the tangent line is equal to 2)?
+    \vspace{1.2in}
+
+\end{questions}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Handy stuff
+% \cdot
