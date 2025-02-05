@@ -2,5 +2,5 @@
 *.log
 *.fls
 *.fdb_latexmk
-*.synctex.gz
+*.synctex*.gz
 *.aux
