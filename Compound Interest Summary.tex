@@ -1,0 +1,120 @@
+% LaTeX template for Finance summaries
+% Stu Alden
+%----------------------------------------------------------------------------------------
+% Compound Interest
+\documentclass[12pt]{article}
+
+\usepackage[12pt]{extsizes}  %ignore warning, it seems to work fine to get 14 pt font
+
+\usepackage[letterpaper,
+            left=1in,
+            right=1in,
+            top=1in,
+            bottom=1in,
+            footskip=.25in]{geometry}
+
+\usepackage{titling}
+\setlength{\droptitle}{-1in}  % Don't need all that space!
+\title{\normalfont\ Compound Interest} % The article title
+\author{} % Don't need author
+\date{}  % Suppress date
+\pagenumbering{gobble}  % No page numbers required
+
+\usepackage{amsmath}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+
+\begin{document}
+
+\maketitle % Print the title/author/date block
+
+\vspace{-1in}
+
+\begin{flushleft}
+    \textbf{Compound Interest} is just \underline{geometric} or \underline{exponential} growth 
+    of money.  The compound interest \underline{rate} is the rate of growth over a period
+    of time, as a percentage of the amount at the \underline{beginning} of the period.  The 
+    period is sometimes referred-to as an interest \textbf{conversion} period.
+\end{flushleft}
+\vspace{.1in}
+
+\begin{description}
+    \item\textbf{A} - Starting amount
+    \item\textbf{S} - Final amount
+    \item\textbf{i} - Interest rate per period \underline{as a decimal} {(\%/100)}
+    \item\textbf{n} - Number of periods (can be fractional)
+\end{description}
+\vspace{.1in}
+
+\begin{flushleft}
+    Then money grows by a factor of $(1+i)$ each period, and we have
+\end{flushleft}
+\vspace{-.1in}
+
+\begin{align*}
+    S & = A(1 + i)^n
+\end{align*}
+\vspace{-.1in}
+
+\begin{flushleft}
+    Conversely,
+\end{flushleft}
+\vspace{-.1in}
+
+\begin{align*}
+    A & = \frac{S}{(1 + i)^n} \\
+      & = S(1+i)^{-1}         \\
+      & = Sv^n
+\end{align*}
+
+\begin{flushleft}
+    where
+\end{flushleft}
+\vspace{-.1in}
+
+\begin{align*}
+    v & = \frac{1}{1 + i} = (1+i)^{-1}
+\end{align*}
+\vspace{.25in}
+
+\begin{flushleft}
+    Timeline:
+\end{flushleft}
+
+
+\begin{center}
+    \begin{tikzpicture}
+        %draw horizontal line with squiggle in middle
+        \draw (0,0) -- (5,0);
+        \draw[decorate,decoration={snake,pre length=5mm, post length=5mm}] (5,0) -- (7,0);
+        \draw (7,0) -- (10,0);
+
+        %draw vertical tick-marks
+        \foreach \x in {0,2,4,8,10}
+        \draw (\x cm,3pt) -- (\x cm,-3pt);
+
+        %Label "nodes"
+        \draw (0,0) node[below=3pt] {$ 0 $} node[above=3pt] {$ A $};
+        \draw (2,0) node[below=3pt] {$ 1 $} node[above=3pt] {$ A(1+i) $};
+        \draw (4,0) node[below=3pt] {$ 2 $} node[above=3pt] {$ A(1+i)^2 $};
+        \draw (6,0) node[below=3pt] {$  $} node[above=3pt] {$  $};
+        \draw (8,0) node[below=3pt] {$ n - 1 $} node[above=3pt] {$ A(1+i)^{n-1} $};
+        \draw (10,0) node[below=3pt] {$ n $} node[above=3pt] {$ S $};
+    \end{tikzpicture}
+\end{center}
+\vspace{.1in}
+
+\begin{flushleft}
+    \textbf{Notes:} \\
+\end{flushleft}
+
+
+\begin{itemize}
+    \item Multiplying by $ (1+i)^t $ (growing) is called \textbf{``accumulating t periods.''}
+    \item Mutiplying by $ v^t $ (shrinking) is called \textbf{``discounting t periods.''}
+    \item Knowing any three of the variables $A$, $S$, $n$ and $i$, you can solve for the fourth.
+    \item Drawing a timeline (even if just in your head) is essential!
+\end{itemize}
+
+\end{document}
