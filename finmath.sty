@@ -1,0 +1,32 @@
+\ProvidesPackage{finmath}
+% Defaults for my financial mathematics notes.
+
+% Page layout
+\RequirePackage[letterpaper,
+            left=1in,  
+            right=1in, 
+            top=1in,                    % go to 0.9 if
+            bottom=1in,                 % more space is needed
+            footskip=.25in]{geometry}
+
+% Math
+\RequirePackage{amsmath}
+
+% Graphics
+\RequirePackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+
+% Layout tuning
+\pagenumbering{gobble}                  % No page numbers required
+\setlength{\parindent}{0pt}             % No paragraph indentation
+\setlength{\parskip}{0.5em}             % Space between paragraphs - 0.4 okay too
+\setlength{\abovedisplayskip}{8pt}      % Space around equations, and
+\setlength{\belowdisplayskip}{8pt}      % 6 pt is okay too
+
+%Title
+\newcommand{\finmathtitle}[1]{%
+    \begin{center}
+        {\Large\bfseries #1}
+    \end{center}
+    \vspace{0.5em}
+}
