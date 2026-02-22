@@ -1,0 +1,128 @@
+% problemset.sty
+% General-purpose problem set / quiz / test template
+% Stu Alden, revised
+% -----------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{problemset}[2026/02/22 v1.0 Problem set template]
+
+% ------------------------
+% Load needed packages
+% ------------------------
+\RequirePackage[margin=1in,includehead,includefoot]{geometry}   % Page layout
+\RequirePackage{amsmath}                                        % Math
+\RequirePackage{multicol}                                       % Multiple columns utility
+\RequirePackage{tikz}                                           % For drawing timelines and diagrams
+\usetikzlibrary{shapes,arrows,calc,through,intersections}
+\tikzset{
+line/.style = {draw, -{Triangle[angle=45]}}
+}
+
+% ------------------------
+% Font setup - needed because exam class is dumb about font sizes
+% ------------------------
+\newcommand{\FontEasyRead}{\fontsize{14}{16}\selectfont}
+
+% ------------------------
+% Flexible answer space
+% Default: 2in, with plus 25% minus 12.5%
+% Usage: \AnswerSpace[3in] for custom space
+% ------------------------
+\newcommand{\AnswerSpace}[1][2in]{%
+    \vspace{#1 plus 0.25\dimexpr#1\relax minus 0.125\dimexpr#1\relax}%
+}
+
+% ------------------------
+% Combine question + answer space
+% Optional argument sets answer space (default 2in)
+% Usage: \Problem{Question text} or \Problem[3in]{Question text}
+% ------------------------
+\newcommand{\Problem}[2][2in]{%
+    \question #2
+    \AnswerSpace[#1]%
+}
+
+% ------------------------
+% Section headings (optional)
+% Optional first argument: extra space before section
+% Usage: \ProblemSection{Section title} or \ProblemSection[1cm]{Section title}
+% ------------------------
+\newcommand{\ProblemSection}[2][0pt]{%
+    \vspace{#1}%
+    \noindent\textbf{\large #2}%
+    \vspace{0.5\baselineskip}%
+}
+
+% ------------------------
+% Header/footer macros
+% Usage: \SetupQuizHeader{MainTitle}{SubTitle}{InstructionsText}
+% ------------------------
+% \newcommand{\SetupHeader}[3]{%
+%     \pagestyle{headandfoot}
+%     \runningfooter{}{\thepage}{}%
+%     % First page header
+%     \firstpageheader
+%     {\FontEasyRead #1 \\ #2 \\ \vphantom{X}}%
+%     {}%
+%     {\FontEasyRead
+%         Name:\ \rule[-0.1cm]{5cm}{0.01cm}\\[0.6cm]%
+%         Date:\ \rule[-0.1cm]{5cm}{0.01cm}%
+%     }%
+%     % Running header for subsequent pages
+%     \runningheader
+%     {\FontEasyRead #1\\#2 (cont.)}%
+%     {}%
+%     {}%
+%     % Instructions block
+%     \newcommand{\InstructionsBlock}{%
+%         \noindent
+%         \begin{minipage}{\textwidth}
+%             \raggedright
+%             #3
+%             \par
+%             \vspace{-0.3\baselineskip}   % slightly tighten rule to instructions
+%             \noindent\rule{\textwidth}{0.2pt}
+%         \end{minipage}%
+%         \vspace{0.5\baselineskip} % space after rule
+%     }%
+% }
+
+% Macro to set up the header and print instructions in one call
+% Usage: \Heading{MainTitle}{SubTitle}{InstructionsText}
+\newcommand{\Heading}[3]{%
+    % Store the arguments internally for running headers if needed
+    \gdef\QuizCourseName{#1}%
+    \gdef\QuizTitle{#2}%
+
+    % First-page header
+    \firstpageheader
+    {\FontEasyRead #1 \\ #2 \\ \vphantom{X}}
+    {}
+    {\FontEasyRead
+        Name:\ \rule[-0.1cm]{5cm}{0.01cm}\\[0.6cm]
+        Date:\ \rule[-0.1cm]{5cm}{0.01cm}
+    }%
+
+    % Running header for subsequent pages
+    \runningheader
+    {\FontEasyRead #1\\#2 (cont.)}
+    {}
+    {}%
+
+    % Instructions block (minipage for spacing control)
+    \noindent
+    \begin{minipage}{\textwidth}
+        \raggedright
+        #3\par
+        \vspace{-0.3\baselineskip}%
+        \noindent\rule{\textwidth}{0.2pt}%
+    \end{minipage}%
+    \vspace{0.5\baselineskip}%
+}
+
+% ------------------------
+% Question spacing adjustments
+% ------------------------
+\newlength{\questiontopsep}
+\newlength{\questionbodyskip}
+\setlength{\questiontopsep}{5pt}      % space before questions
+\setlength{\questionbodyskip}{5pt}    % space after questions

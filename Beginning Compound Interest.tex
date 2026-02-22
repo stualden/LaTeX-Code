@@ -1,78 +1,43 @@
-% Standard quiz or short test template
+% Easy Compound Interest Exercise Set 1
 % Stu Alden
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ------------------------------------------
 
-\documentclass[addpoints,twoside]{exam}  % Can't specify font size here, so we'll set it manually below
-\runningfooter{}{\thepage}{}
-
-\usepackage{amsmath}
-
-\usepackage{multicol}
-
-\usepackage[margin=1in,includehead,includefoot]{geometry}
-
-\usepackage{tikz}
-\usetikzlibrary{shapes,arrows,calc,through,intersections}
-\tikzstyle{line} = [draw, -triangle 45]
-
-% -----------------------------------
-
-\newcommand{\MyFont}{\fontsize{14}{16}\selectfont}
-
-\pagestyle{head}
-
-\firstpageheader
-  {\MyFont Financial Literacy\\Compound Interest I - Exercise Set 1}
-  {}
-  {\MyFont Name:\ \rule[-0.1cm]{5cm}{0.01cm}}
-
-\runningheader
-  {\MyFont Financial Literacy\\Compound Interest I - Exercise Set 1}
-  {}
-  {}
+\documentclass[addpoints,twoside]{exam}         % Can't specify font size here, 
+                                                %so we'll set it manually below
+\usepackage{problemset}
 
 % -------------------------------------------------------------------------
 \begin{document}
 
-\MyFont   % Set the font size for the entire document
+\FontEasyRead   % set font size here - no good alternative with the exam class
 
-\noindent\textbf{Instructions:  }For each problem, sketch a timeline, write an equation in one variable, and
-solve for that variable to answer the question.
-
-\noindent\rule{\textwidth}{0.2pt}
+\Heading                        % Modify heading as needed
+{Financial Literacy}
+{Compound Interest I - Exercise Set 1}
+{\textbf{Instructions: }For each problem, sketch a timeline, write an equation
+        in one variable, and solve for that variable.}
 
 \begin{questions}
 
-        \question Five (5) years ago, you put \$100 in a savings account earning 3.5\%
-        interest.  How much do you have in the account now?
-        \vspace{2in plus 0.5in minus 0.25in}  % flexible answer space
-        %        \vspace*{2in}  % keeps space even if at top of page
+        \Problem{Five (5) years ago, you put \$100 in a savings account earning 3.5\%
+                interest.  How much do you have in the account now?}
 
-        \question You just lent a friend \$300 and told him you'd like him to repay you
-        someday at 7\% annual interest.  How much does he owe you if he pays
-        you back two years from now?
-        \vspace{2in plus 0.5in minus 0.25in}  % flexible answer space
+        \Problem{You just lent a friend \$300 and told him you'd like him to repay you
+                someday at 7\% annual interest.  How much does he owe you if he pays
+                you back two years from now?}
 
-        %        \vspace*{2in}
+        \Problem{Same situation as in problem 2, but your friend pays you back in only
+                6 months.  How much does he owe you then?}
 
-        \question Same situation as in problem 2, but your friend pays you back in only
-        6 months.  How much does he owe you then?
-        \vspace{2in plus 0.5in minus 0.25in}  % flexible answer space
+        \Problem{You buy shares in a mutual fund for \$150.  After 6 years, you sell
+                your shares for \$212.78. What annual rate of interest did you earn?}
 
+        \Problem{You buy \$1,000 worth of stock in a company whose stock price is
+                growing at a rate of 10\% per year.  How many years must you wait
+                before the stock is worth \$1,250?}
 
-        \question You buy shares in a mutual fund for \$150.  After 6 years, you sell your
-        shares for \$212.78. What annual rate of interest did you earn?
-        \vspace{2in plus 0.5in minus 0.25in}  % flexible answer space
-
-        \question You buy \$1,000 worth of stock in a company whose stock price is growing at
-        a rate of 10\% per year.  How many years must you wait before the stock is worth
-        \$1,250?
-        \vspace{2in plus 0.5in minus 0.25in}  % flexible answer space
-
-        \question At 5\% annual interest, how long does it take for your money to triple?
-        \vspace{2in plus 0.5in minus 0.25in}  % flexible answer space
+        \Problem{At 5\% annual interest, how long does it take for your money to triple?}
 
 \end{questions}
 
 \end{document}
-
