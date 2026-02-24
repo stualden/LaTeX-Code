@@ -14,11 +14,11 @@
 Different cashflows can be compared and equated, at a particular compound interest rate, by
 accumulating and/or discounting all flows to a single ``measurement'' or ``comparison'' date.
 
-We've already been doing this - for example, when you get a future value and need to calculate a
+We've already been doing this---for example, when you get a future value and need to calculate a
 present value, or vice versa.  But we can have any kind of combination of \textbf{multiple} cash
 flows, both positive and negative, with any kind of timing, and the basic process still works.
 
-One particularly nice behavior of compound interest is that you get the same equivalence results
+One particularly nice aspect of compound interest is that you get the same equivalence results
 \underline{regardless of your choice of comparison date}.
 
 \vspace{.2in}
@@ -28,31 +28,6 @@ Let's say you borrow \$100 today, and you plan to repay the loan with \$50 6 mon
 from now.  If the interest rate is 6\% compounded monthly, how much is that second payment?
 
 We start by drawing a timeline, putting what we know in the appropriate places:
-
-% \begin{center}
-%   \begin{tikzpicture}
-%     %draw horizontal line with squiggle in middle
-%     \draw (0,0) -- (5,0);
-%     \draw[decorate,decoration={snake,pre length=5mm, post length=5mm}] (5,0) -- (7,0);
-%     \draw (7,0) -- (10,0);
-
-%     %draw vertical tick-marks
-%     \foreach \x in {0,2,4,8,10}
-%     \draw (\x cm,3pt) -- (\x cm,-3pt);
-
-%     %Label "nodes"
-%     \draw (0,0) node[below=3pt] {$ 0 $} node[above=3pt] {$  $};
-%     \draw (0,0) node[below=18pt] {$ A $} node[above=3pt] {$  $};
-
-%     \draw (2,0) node[below=3pt] {$ 1 $} node[above=3pt] {$ R $};
-%     \draw (4,0) node[below=3pt] {$ 2 $} node[above=3pt] {$ R $};
-%     \draw (6,0) node[below=3pt] {$  $} node[above=3pt] {$  $};
-%     \draw (8,0) node[below=3pt] {$ n - 1 $} node[above=3pt] {$ R $};
-%     \draw (10,0) node[below=3pt] {$ n $} node[above=3pt] {$ R $};
-%     \draw (10,0) node[below=18pt] {$ S $} node[above=3pt] {$ R $};
-%   \end{tikzpicture}
-% \end{center}
-
 
 \begin{center}
   \begin{tikzpicture}[scale=1]
@@ -69,15 +44,8 @@ We start by drawing a timeline, putting what we know in the appropriate places:
     \draw (0,0) node[below=6pt] {$ 0 $} node[above=3pt] {$ \$100 $};
     \draw (6,0) node[below=6pt] {$ 6 $} node[above=3pt] {$ -\$50 $};
     \draw (12,0) node[below=6pt] {$ 12 $} node[above=3pt] {$ -\$X $};
-    % \draw at (3,0) node[below=6pt] {3};
 
-
-    % \draw (6,0) node[below=3pt] {$ 6 $} node[above=3pt] {$ -\$50 $};
-    % %    \draw node[below=6pt] at (6,0) {6} node[above=3pt] {$ -\$50 $};
-    % \node[below=6pt] at (9,0) {9};
-    % \node[below=6pt] at (12,0) {12};
-
-    % Monthly rate label
+    % Monthly rate label below
     \node[below=22pt] at (6,0)
     {Monthly rate $i = 0.005$};
 

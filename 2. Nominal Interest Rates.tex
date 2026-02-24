@@ -28,45 +28,45 @@ comfortable with it.
 The effective annual rate (sometimes called EAR) is the rate that would generate the same amount of interest if it were
 compounded once per year.  In our 6\% monthly example, the EAR would be the rate $j$ that satisfies the equation
 \[
-    (1 + j) = (1 + 0.005)^{12}
+  (1 + j) = (1 + 0.005)^{12}
 \]
 
-Solving for j we get 0.061678, or about 6.1678\%.  Note that the effective annual rate (6.1678\%) is \underline{higher} than the
-nominal rate (6\%), due to more frequent compounding.
+Solving for j we get 0.061678, or about 6.2\%.  Note that this effective annual rate is \underline{higher} than the
+nominal rate (6\%), due to monthly (versus annual) compounding.
 
 A year-long timeline might look like this:
 
 \begin{center}
-    \begin{tikzpicture}[scale=1]
+  \begin{tikzpicture}[scale=1]
 
-        % Main horizontal axis
-        \draw[thick] (0,0) -- (12,0);
+    % Main horizontal axis
+    \draw[thick] (0,0) -- (12,0);
 
-        % Tick marks
-        \foreach \x in {0,...,12}
-        \draw (\x,0.15) -- (\x,-0.15);
+    % Tick marks
+    \foreach \x in {0,...,12}
+    \draw (\x,0.15) -- (\x,-0.15);
 
-        % Month labels below axis
-        \node[below=6pt] at (0,0) {0};
-        \node[below=6pt] at (3,0) {3};
-        \node[below=6pt] at (6,0) {6};
-        \node[below=6pt] at (9,0) {9};
-        \node[below=6pt] at (12,0) {12};
+    % Month labels below axis
+    \node[below=6pt] at (0,0) {0};
+    \node[below=6pt] at (3,0) {3};
+    \node[below=6pt] at (6,0) {6};
+    \node[below=6pt] at (9,0) {9};
+    \node[below=6pt] at (12,0) {12};
 
-        % Monthly rate label
-        \node[below=22pt] at (6,0)
-        {Monthly rate $i = 0.005$};
+    % Monthly rate label
+    \node[below=22pt] at (6,0)
+    {Monthly rate $i = 0.005$};
 
-        % Vertical accumulation factors
-        \foreach \x in {1,...,12}
-        \node[
-            rotate=90,
-            anchor=base,
-            font=\scriptsize
-        ] at (\x+0.08,0.85)
-        {$ (1.005)^{\x} $};
+    % Vertical accumulation factors
+    \foreach \x in {1,...,12}
+    \node[
+      rotate=90,
+      anchor=base,
+      font=\scriptsize
+    ] at (\x+0.08,0.85)
+    {$ (1.005)^{\x} $};
 
-    \end{tikzpicture}
+  \end{tikzpicture}
 \end{center}
 
 Monthly is perhaps the most common compounding frequency (conversion period), but you will see many others, including quarterly (four times a year) and
@@ -77,18 +77,19 @@ period shrinks down to nothing.  At that point, we have the pure exponential gro
 problems in Algebra II.  In calculus, you'll see the amazing connection, where
 
 \[
-    \lim_{n \to \infty} (1+\frac{j}{n})^n = e^j
+  \lim_{n \to \infty} (1+\frac{j}{n})^n = e^j
 \]
 
 \textbf{Notes:}
 
 \begin{itemize}
 
-    \item For any choice of i) interest rate and ii) compounding period, an equivalent rate can be determined
-          with a different rate and a different compounding period. So you can convert from annual to
-          quarterly to daily to whatever you want.
-    \item When doing financial math exercises, always start by identifying the \underline{period} and
-          the corresponding effective \underline{rate per period}.
+\item For any choice of i) interest rate and ii) compounding period, an equivalent rate can be determined
+with a different rate and a different compounding period. So you can convert from annual to
+quarterly to daily to whatever you want.
+\item When doing financial math exercises, always start by identifying the \underline{period} and
+the corresponding effective \underline{rate per period}.
+\item For a given nominal rate, the more frequent the compounding, the higher the effect annual rate.
 
 \end{itemize}
 
