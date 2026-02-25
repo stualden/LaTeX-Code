@@ -1,83 +1,54 @@
-% Standard quiz or short test template
+% Compounding period exercises
 % Stu Alden
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[addpoints]{exam}
-
-\usepackage{array}
-\usepackage{amsmath}
-\usepackage[14pt]{extsizes}  %ignore warning, it seems to work fine to get 14 pt font
-\usepackage{multicol}
-\usepackage[top=2.75cm,
-            bottom=2.00cm,
-            left= 3.00cm,
-            right=2.50cm]{geometry}
-
-
-
-% \usepackage[margin=1.5cm]{geometry}
-% \usepackage{tikz}
-% \usetikzlibrary{shapes,arrows}
-% \usetikzlibrary{calc,arrows,through}
-% \usetikzlibrary{intersections}
-
-% \usepackage[latin1]{inputenc}
-% \pagestyle{empty}
-% \tikzstyle{line} = [draw, -triangle 45]
-
-
+% ------------------------------------------
+\documentclass[addpoints,twoside]{exam}         % Can't specify font size here, 
+                                                % so we'll set it manually below
+\usepackage{problemset}                         % Custom package for problem sets - 
+                                                % see problemset.sty    
+% -------------------------------------------------------------------------
 \begin{document}
 
-\pagestyle{head}
-\lhead{\textbf{Compounding Exercises}\\Financial Literacy}
-\rhead{Name: \rule[-0.1cm]{5cm}{0.01cm}}
+\FontEasyRead                                   % Set font size here
 
-\textbf{Fill in the chart:}
+\Heading                                        % Modify heading as needed
+{Financial Literacy}                            % Course
+{Compound Interest II - Exercise Set 1}          % Title
+{Answer the questions below.}
 
-\renewcommand{\arraystretch}{2} % Increases row height
+\ProblemSection{Fill in the chart:}
+
+\renewcommand{\arraystretch}{2} % Increases row height, looks better
 \setlength{\tabcolsep}{10pt} % Adjusts column spacing
-
 \begin{table}[h]
     \centering
     \begin{tabular}{|p{3cm}<{\raggedright}|p{3cm}<{\raggedright}|p{2cm}<{\raggedright}|p{5cm}<{\raggedright}|}
         \hline
-        \textbf{Description} & \textbf{Length of Compounding Period} & \textbf{Rate per Period} & \textbf{\$1 grows to what after 3 years?} \\
+        \textbf{Description}            & \textbf{Length of Compounding Period} & \textbf{Rate per Period} & \textbf{\$1 grows to what after 3 years?} \\
         \hline
-        1. 10\% compounded semiannually &  &  &  \\
+        1. 10\% compounded semiannually &                                       &                          &                                           \\
         \hline
-        2. 6\% compounded quarterly &  &  &  \\
+        2. 6\% compounded quarterly     &                                       &                          &                                           \\
         \hline
-        3. 9\% compounded monthly &  &  &  \\
+        3. 9\% compounded monthly       &                                       &                          &                                           \\
         \hline
-        4. 4\% compounded daily &  &  &  \\
+        4. 4\% compounded daily         &                                       &                          &                                           \\
         \hline
     \end{tabular}
 \end{table}
 
-\textbf{For questions 5-8, assume 100\% annual interest.  In one year, \$1 grows}
-\textbf{to what if interest is compounded}
-
+\vspace{0.5cm}
+\ProblemSection{For questions 5-8, assume 100\% annual interest.  In one year,
+    \$1 grows to what if interest is compounded}
 
 \begin{questions}
-\setcounter{question}{4}
-
+    \setcounter{question}{4}   % Start question numbering at 5
     \question Annually?
     \vspace{.7cm}
     \question Monthly?
     \vspace{.7cm}
     \question Daily?
     \vspace{.7cm}
-    \question Continuously? (Hint - determine $\lim_{x \to \infty} (1+\frac{1}{x})^x$)
-
-% 6. Monthly?
-% 7. Daily?
-% 8. Continuously?  (Hint - determine )
-
+    \question Continuously? (Hint - it's $\lim_{x \to \infty} (1+\frac{1}{x})^x$)
 \end{questions}
-
-% \newpage
-% \pagestyle{empty} % Remove headers for the rest of the document
-
-
-
 
 \end{document}
