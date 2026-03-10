@@ -11,8 +11,8 @@
 
 \finmathtitle{3. Equivalent Cashflow Equations}
 
-Different cashflows can be compared and equated, at a particular compound interest rate, by
-accumulating and/or discounting all flows to a single ``measurement'' or ``comparison'' date.
+Various cashflows can be compared and equated, at a particular compound interest rate, by
+accumulating or discounting each cashflow to a single ``measurement'' or ``comparison'' date.
 
 We've already been doing this---for example, when you get a future value and need to calculate a
 present value, or vice versa.  But we can have any kind of combination of \textbf{multiple} cash
@@ -49,15 +49,6 @@ We start by drawing a timeline, putting what we know in the appropriate places:
     \node[below=22pt] at (6,0)
     {Monthly rate $i = 0.005$};
 
-    % Vertical accumulation factors
-    % \foreach \x in {1,...,12}
-    % \node[
-    %   rotate=90,
-    %   anchor=base,
-    %   font=\scriptsize
-    % ] at (\x+0.08,0.85)
-    % {$ (1.005)^{\x} $};
-
   \end{tikzpicture}
 \end{center}
 
@@ -80,12 +71,16 @@ Solving for X, we get \$54.65, the amount that must be repaid at the end of the 
 
   \item If we maintain the sign convention for each payment (whether it's a payment from you or to you), we can simply add
     up all payments (with the appropriate payment timing adjustment for interest) and set the signed sum of all payments to
-    zero.
+    zero. The example above, then, could be written equivalently as
+
+    \[
+      100 - 50(1 + 0.005)^{-6} - X(1+.005)^{-12} = 0
+    \]
+
 
   \item This equation approach works for any variable, not just payments.  For example, you might instead be solving for
     the time at which a payment must be made, or for the interest rate in effect.
 
 \end{itemize}
-
 
 \end{document}
