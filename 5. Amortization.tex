@@ -67,8 +67,8 @@ the loan, it can be calculated using the standard annuity formulas, either \text
   \item[n, R, i, A] As defined previously
   \item[k] Number of periods, from beginning, at which to measure outstanding principal (so $k$ is between 0 and $n$ inclusive)
   \item[P] Outstanding principal immediately after the $k$th payment
-  \item[$\mathbf{\sx{\angl{k} i}}$] Accumulated value of $k$ payments thus far
-  \item[$\mathbf{\ax{\angl{n-k} i}}$] Present value of the $(n-k)$ remaining payments
+  \item[$R \cdot \mathbf{\sx{\angl{k} i}}$] Accumulated value of $k$ payments thus far
+  \item[$R \cdot \mathbf{\ax{\angl{n-k} i}}$] Present value of the $(n-k)$ remaining payments
 \end{description}
 
 \pagebreak
@@ -89,7 +89,7 @@ The retrospective (backward-looking) formula is
 %\vspace{-.3in}
 
 \begin{align*}
-  P & = A \cdot (1+i)^k - \sx{ \angl{k} i} \\
+  P & = A \cdot (1+i)^k - R \cdot \sx{ \angl{k} i} \\
 \end{align*}
 
 In words, the remaining principal is the accumulated value of the original loan

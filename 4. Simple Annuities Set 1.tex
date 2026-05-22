@@ -1,11 +1,14 @@
 % Financial Mathematics
-% Exercise Template
-%----------------------------------------------
-\documentclass[addpoints,twoside]{exam}         % Can't specify font size here,
-% so we'll set it manually below
-\usepackage{problemset}                         % Custom package for problem sets -
-% see problemset.sty
-% -------------------------------------------------------------------------
+% Simple Annuities Set 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,twoside]{exam}
+\usepackage{aldenexam}
+
+\noprintanswers
+%\printanswers
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 
 \FontEasyRead                                   % Set font size here
@@ -17,32 +20,42 @@ in one variable, and solve for that variable to answer the question.}
 
 \begin{questions}
 
-  \Problem{Find the accumulated value of a simple annuity of \$2,000 per year for 5 years
-  if money is worth 9\% per year.}
+  \mathproblem[][1.75in]{
+    Find the accumulated value of a simple annuity of \$2,000 per year for 5 years
+    if money is worth 9\% per year.
+  }
 
-  \Problem{It is estimated that a machine will need to be replaced 10 years from now at a cost of \$80,000.  How
-  much must be set aside each year to provide that amount, if you can earn 8\% interest per year?}
+  \mathproblem[][1.75in]{
+    It is estimated that a machine will need to be replaced 10 years from now at a
+    cost of \$80,000. How much must be set aside each year to provide that amount, if
+    you can earn 8\% interest per year?
+  }
 
-  \Problem{Jeff buys a used car by paying \$3000 down and \$300 per month for 3 years.  What was the
-  equivalent up-front cash price of the car, if the interest rate on the loan is 9\% compounded monthly?}
+  \mathproblem[][2in]{
+    Jeff buys a used car by paying \$3000 down and \$300 per month for 3 years.  What was the
+    equivalent up-front cash price of the car, if the interest rate on the loan is 9\% compounded monthly?
+  }
 
-  \Problem{To settle a debt with interest at 12\% compounded semiannually, Leonard agrees to make 15
+  \mathproblem[][1.75in]{
+    To settle a debt with interest at 12\% compounded semiannually, Leonard agrees to make 15
     payments of \$400 at the end of each half-year, and then a final payment, 6 months later, of \$292.39.
-  What was the original amount of the debt?}
+    What was the original amount of the debt?
+  }
 
-  \Problem{A company is trying to decide whether to buy or lease some equipment.\sloppy
+  \mathproblem[][1.75in]{
+    A company is trying to decide whether to buy or lease some equipment.
 
-    \begin{itemize}
-      \item They can buy it for \$40,000, and then incur maintenance costs of \$400 per month, payable
-        at the end of each month.  At the end of 6 years, they expect to be able to sell the
-        used equipment for \$5,000.
-      \item Alternatively, they could lease the equipment \$1,200 per month, payable at the end
-        of each month, for 6 years, and the lessor would pay maintenance costs.  After 6 years, the
-        lessor would take back the equipment.
-    \end{itemize}
+    \bpoint They can buy it for \$40,000, and then incur maintenance costs of \$400 per month, payable
+    at the end of each month.  At the end of 6 years, they expect to be able to sell the
+    used equipment for \$5,000.
+
+    \bpoint Alternatively, they could lease the equipment \$1,200 per month, payable at the end
+    of each month, for 6 years, and the lessor would pay maintenance costs.  After 6 years, the
+    lessor would take back the equipment.
 
     If the company can earn 18\% compounded monthly on capital, would it make more sense to
-  buy or lease?}
+    buy or lease?
+  }
 
 \end{questions}
 
