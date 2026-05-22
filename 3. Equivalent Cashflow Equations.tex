@@ -1,25 +1,22 @@
 % 3. Equivalent Cashflow Equestions
 % Stu Alden
-%----------------------------------------------------------------------------------------
-
-\documentclass[14pt]{extarticle}
-
-\usepackage{conceptsheet}
-
-%---------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[14pt,twoside]{extarticle}
+\usepackage{aldenarticle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-\finmathtitle{3. Equivalent Cashflow Equations}
+\ArticleTitle{3. Equivalent Cashflow Equations}
 
 Various cashflows can be compared and equated, at a particular compound interest rate, by
 accumulating or discounting each cashflow to a single ``measurement'' or ``comparison'' date.
 
 We've already been doing this---for example, when you get a future value and need to calculate a
-present value, or vice versa.  But we can have any kind of combination of \textbf{multiple} cash
-flows, both positive and negative, with any kind of timing, and the basic process still works.
+present value, or vice versa.  But we can have \emph{any} kind of combination of \emph{any} number
+of cash flows, both positive and negative, with \emph{any} kind of timing, and the basic process still works.
 
 One particularly nice aspect of compound interest is that you get the same equivalence results
-\underline{regardless of your choice of comparison date}.
+\emph{regardless of your choice of comparison date}.
 
 \vspace{.2in}
 \textbf{An Example:}
@@ -54,8 +51,9 @@ We start by drawing a timeline, putting what we know in the appropriate places:
 
 We are showing the \$100 as positive (what you borrowed) and the other values as negative (what you pay back).
 
-Next, pick a convenient measurement date.  A good choice for this problem would be time 0, so the \$100 needs
-no adjustment.  We just need to ``bring back'' the \$50 by 6 months and the \$X by one year:
+Next, pick a convenient measurement date.  A good choice for this problem would be time 0, so
+the \$100 won't need any adjustment.  We just need to ``bring back'' the \$50 by 6 months and
+the \$X by one year:
 
 \[
   100 = 50(1 + 0.005)^{-6} + X(1+.005)^{-12}
@@ -63,23 +61,20 @@ no adjustment.  We just need to ``bring back'' the \$50 by 6 months and the \$X 
 
 Solving for X, we get \$54.65, the amount that must be repaid at the end of the year.
 
-\pagebreak
-%\vspace{.2in}
+\vspace{.2in}
 \textbf{Notes:}
-
 \begin{itemize}
 
-  \item If we maintain the sign convention for each payment (whether it's a payment from you or to you), we can simply add
-    up all payments (with the appropriate payment timing adjustment for interest) and set the signed sum of all payments to
-    zero. The example above, then, could be written equivalently as
+  \item If we maintain the sign convention for each payment (whether it's a payment \emph{from} you
+        or \emph{to} you), we can simply add up all payments (with the appropriate payment timing
+        adjustment for interest) and set the signed sum of all payments to zero. The example above,
+        then, could be written equivalently as
+        \[
+          100 - 50(1 + 0.005)^{-6} - X(1+.005)^{-12} = 0
+        \]
 
-    \[
-      100 - 50(1 + 0.005)^{-6} - X(1+.005)^{-12} = 0
-    \]
-
-
-  \item This equation approach works for any variable, not just payments.  For example, you might instead be solving for
-    the time at which a payment must be made, or for the interest rate in effect.
+  \item This equation approach works for \emph{any} variable, not just payments.  For example, you might instead be solving for
+        the time at which a payment must be made, or for the interest rate in effect.
 
 \end{itemize}
 

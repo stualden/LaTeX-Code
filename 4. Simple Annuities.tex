@@ -1,26 +1,21 @@
 % LaTeX template for Finance summaries
 % Stu Alden
-%----------------------------------------------------------------------------------------
-% Simple Annuities
-
-
-\documentclass[14pt]{extarticle}
-
-\usepackage{conceptsheet}
-
-%---------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[14pt,twoside]{extarticle}
+\usepackage{aldenarticle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-\finmathtitle{4. Simple Annuities}
+\ArticleTitle{4. Simple Annuities}
 
 \textbf{Annuities} are simply a collection of multiple payments, generally (but not always)
 level amounts that are generally (but not always) equally spaced.  When amounts are level and equally
-spaced, and the rate period coincides with the payment period, we call them ``simple'' annuities.
+spaced, \emph{and} the rate period coincides with the payment period, we call them ``simple'' annuities.
 
-The mathematics needed to value them is exactly the same as what we've already seen for compound interest,
-but when there are many payments, it is usually easier to use a calculator or computer.  There are some
-computational shortcuts, however, and that is the subject of this concept sheet.  We'll use the following
-notation:
+The mathematics needed to value them is \emph{exactly} the same as what we've already seen for compound
+interest, but when there are many payments, it is usually easier to use a calculator or computer.  There
+are some useful computational shortcuts, however, and that is the subject of this concept sheet.  We'll
+use the following notation:
 
 \begin{center}
   \renewcommand{\arraystretch}{1.2}
@@ -65,42 +60,42 @@ Then we have
   S & = R \cdot \frac{(1 + i)^n-1}{i} \\
 \end{align*}
 
-\vspace{-.2in}
+%\vspace{-.2in}
 
-S denotes the ending, future, or \textbf{accumulated value} of the stream of annuity payments.
-\pagebreak
+$S$ denotes the ending, future, or \textbf{accumulated value} of the stream of annuity payments.
 
-To value the payments at the beginning instead (denoted \textbf{present value}), we just discount S by
-n periods, as follows:
+%%\newpage
 
+To value the payments at the beginning instead (denoted \textbf{present value}), we just discount $S$ by
+$n$ periods, as follows:
 \begin{align*}
   A & = \frac{S}{(1 + i)^n}              \\\\
-  & = R \cdot \frac{1-(1 + i)^{-n}}{i} \\\\
-  & = R \cdot \frac{1 - v^n}{i}
+    & = R \cdot \frac{1-(1 + i)^{-n}}{i} \\\\
+    & = R \cdot \frac{1 - v^n}{i}
 \end{align*}
 
 where, as before,
-
 \[
   v = \frac{1}{1+i} = (1+i)^{-1}
 \]
 
-\vspace{.5in}
+%\vspace{.3in}
 
 \textbf{Note:}
 
-When actuaries want to specify the interest rate and the term of the annuity in the notation, they use the symbol
-{\Large
-  \[
-    \ax{\angln i}
-  \]
-}
+When actuaries want to specify the \emph{interest rate} and the \emph{term} of the value of
+a \$1 annuity in a single symbol, they use
+  {\Large
+    \[
+      \ax{\angln i}
+    \]
+  }
 for present value and
-{\Large
-  \[
-    \sx{ \angln i}
-  \]
-}
+  {\Large
+    \[
+      \sx{ \angln i}
+    \]
+  }
 \vspace{.2in}
 
 for accumulated or future value, where $ n $ is the number of periods and $ i $ is the rate per period.
