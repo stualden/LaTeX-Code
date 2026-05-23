@@ -1,5 +1,0 @@
-  \Problem{An annuity with payments at the end of each month pays \$200 for 2 years, then \$300 for the next year, then
-  \$400 for the final 2 years.  Find the discounted value (at time 0) of these payments at 6\% compounded monthly.}
-
-    \Problem{An annuity with payments at the end of each month pays \$200 for 2 years, then \$300 for the next year, then
-        \$400 for the final 2 years.  Find the discounted value (at time 0) of these payments at 6\% compounded monthly.}

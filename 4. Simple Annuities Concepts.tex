@@ -1,0 +1,103 @@
+% LaTeX template for Finance summaries
+% Stu Alden
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[14pt,twoside]{extarticle}
+\usepackage{aldenarticle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\ArticleTitle{4. Simple Annuities}
+
+\textbf{Annuities} are simply a collection of multiple payments, generally (but not always)
+level amounts that are generally (but not always) equally spaced.  When amounts are level and equally
+spaced, \emph{and} the rate period coincides with the payment period, we call them ``simple'' annuities.
+
+The mathematics needed to value them is \emph{exactly} the same as what we've already seen for compound
+interest, but when there are many payments, it is usually easier to use a calculator or computer.  There
+are some useful computational shortcuts, however, and that is the subject of this concept sheet.  We'll
+use the following notation:
+
+\begin{center}
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{rl}
+    \textbf{R} & Amount of each payment, paid at the \underline{end} of each period \\
+    \textbf{n} & Number of payments, so here also the number of periods             \\
+    \textbf{i} & Interest rate per period (as a decimal, \%/100)                    \\
+    \textbf{A} & Present Value of the annuity (at time 0)                           \\
+    \textbf{S} & Accumulated (Future) Value of the annuity (at time n)              \\
+  \end{tabular}
+\end{center}
+
+Then the timeline looks like this:
+
+\begin{center}
+  \begin{tikzpicture}
+    %draw horizontal line with squiggle in middle
+    \draw (0,0) -- (5,0);
+    \draw[decorate,decoration={snake,pre length=5mm, post length=5mm}] (5,0) -- (7,0);
+    \draw (7,0) -- (10,0);
+
+    %draw vertical tick-marks
+    \foreach \x in {0,2,4,8,10}
+    \draw (\x cm,3pt) -- (\x cm,-3pt);
+
+    %Label "nodes"
+    \draw (0,0) node[below=3pt] {$ 0 $} node[above=3pt] {$  $};
+    \draw (0,0) node[below=18pt] {$ A $} node[above=3pt] {$  $};
+
+    \draw (2,0) node[below=3pt] {$ 1 $} node[above=3pt] {$ R $};
+    \draw (4,0) node[below=3pt] {$ 2 $} node[above=3pt] {$ R $};
+    \draw (6,0) node[below=3pt] {$  $} node[above=3pt] {$  $};
+    \draw (8,0) node[below=3pt] {$ n - 1 $} node[above=3pt] {$ R $};
+    \draw (10,0) node[below=3pt] {$ n $} node[above=3pt] {$ R $};
+    \draw (10,0) node[below=18pt] {$ S $} node[above=3pt] {$ R $};
+  \end{tikzpicture}
+\end{center}
+
+Then we have
+
+\begin{align*}
+  S & = R \cdot \frac{(1 + i)^n-1}{i} \\
+\end{align*}
+
+%\vspace{-.2in}
+
+$S$ denotes the ending, future, or \textbf{accumulated value} of the stream of annuity payments.
+
+%%\newpage
+
+To value the payments at the beginning instead (denoted \textbf{present value}), we just discount $S$ by
+$n$ periods, as follows:
+\begin{align*}
+  A & = \frac{S}{(1 + i)^n}              \\\\
+    & = R \cdot \frac{1-(1 + i)^{-n}}{i} \\\\
+    & = R \cdot \frac{1 - v^n}{i}
+\end{align*}
+
+where, as before,
+\[
+  v = \frac{1}{1+i} = (1+i)^{-1}
+\]
+
+%\vspace{.3in}
+
+\textbf{Note:}
+
+When actuaries want to specify the \emph{interest rate} and the \emph{term} of the value of
+a \$1 annuity in a single symbol, they use
+  {\Large
+    \[
+      \ax{\angln i}
+    \]
+  }
+for present value and
+  {\Large
+    \[
+      \sx{ \angln i}
+    \]
+  }
+\vspace{.2in}
+
+for accumulated or future value, where $ n $ is the number of periods and $ i $ is the rate per period.
+
+\end{document}
